@@ -61,11 +61,13 @@ public class Song implements Comparable<Song> {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.title);
-        hash = 59 * hash + Objects.hashCode(this.artist);
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.title);
+        hash = 97 * hash + Objects.hashCode(this.artist);
+        hash = 97 * hash + this.year;
         return hash;
     }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -76,7 +78,7 @@ public class Song implements Comparable<Song> {
             return false;
         }
         final Song other = (Song) obj;
-        return (Objects.equals(this.title, other.title) && Objects.equals(this.artist, other.artist));
+        return (Objects.equals(this.title, other.title) && Objects.equals(this.artist, other.artist) && Objects.equals(this.year, other.year));
     }
 
 //    @Override
